@@ -10,11 +10,10 @@ defaults: &defaults
     - image: circleci/node:11.10.1
 
 jobs:
-  test:
+  build:
     <<: *defaults
     steps:
       - checkout
-
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
@@ -30,6 +29,18 @@ jobs:
       - run:
           name: Build
           command: yarn build:production
+      - run:
+          name: Avoid hosts unknown for github
+          command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+      - run:
+          name: Set up git
+          command: git config --global user.email "meza@meza.hu" && git config --global user.name "Meza"
+      - run:
+          name: Prepare release
+          command: yarn standard-version
+      - run:
+          name: Publish package
+          command: git push --no-verify --follow-tags origin master && npm publish
 
       - save_cache:
           paths:
@@ -45,29 +56,22 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run:
-          name: Avoid hosts unknown for github
-          command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
-      - run:
-          name: Set up git
-          command: git config --global user.email "meza@meza.hu" && git config --global user.name "Meza"
-      - run:
-          name: Prepare release
-          command: yarn standard-version
-      - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
       - run:
           name: Publish package
-          command: git push --no-verify --follow-tags origin master && npm publish
+          command: npm publish
 
 workflows:
   version: 2
-  test-deploy:
+  build-deploy:
     jobs:
-      - test
+      - build
       - deploy:
           requires:
-            - test
+            - build
           filters:
+            tags:
+              only: /^v.*/
             branches:
-              only: master
+              ignore: /.*/
