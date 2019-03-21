@@ -1,6 +1,6 @@
 {
   "name": "jest-chance",
-  "version": "0.0.14",
+  "version": "0.0.16",
   "description": "Random seed generator for chancejs with jest",
   "main": "dist/index.js",
   "types": "src/index.d.ts",
