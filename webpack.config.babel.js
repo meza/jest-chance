@@ -6,7 +6,7 @@ module.exports = (a, env) => {
   const devMode = !(env.mode === 'production');
   return {
     entry: {
-      'jest-chance': './src/index.ts',
+      'index': './src/index.ts',
     },
     devtool: 'inline-source-map',
     mode: 'development',
