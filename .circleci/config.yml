@@ -44,9 +44,13 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
+      meza [17:10]
+      - run:
+          name: Avoid hosts unknown for github
+          command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
       - run:
           name: Set up git
-          command: git config --global -L && git config --global user.email "meza@meza.hu" && git config --global user.name "Meza"
+          command: git config --global user.email "meza@meza.hu" && git config --global user.name "Meza"
       - run:
           name: Prepare release
           command: yarn standard-version
