@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.27](https://github.com/meza/jest-chance/compare/v0.0.26...v0.0.27) (2019-03-21)
+
+
+### Bug Fixes
+
+* **circleci:** config inconsistencies ([8a31d09](https://github.com/meza/jest-chance/commit/8a31d09))
+
+
+
 ## [0.0.26](https://github.com/meza/jest-chance/compare/v0.0.25...v0.0.26) (2019-03-21)
 
 
