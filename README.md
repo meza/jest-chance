@@ -3,6 +3,15 @@ A small library to help javascript projects deal with reproducible randomised te
 
 ## Usage
 
+### Installing
+```
+yarn add -D jest-chance
+```
+
+```
+npm install -D jest-chance
+```
+
 ### Add to Jest
 To have a random seed for each test execution, we need to tell Jest to use this library.
 
