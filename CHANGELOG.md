@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.3](https://github.com/meza/jest-chance/compare/v0.0.1...v0.0.3) (2019-03-21)
+
+
+### Bug Fixes
+
+* **circleci:** configuration fix ([476fb53](https://github.com/meza/jest-chance/commit/476fb53))
+* **circleci:** fixed git creds ([6e3898b](https://github.com/meza/jest-chance/commit/6e3898b))
+* **circleci:** fixed git creds ([99d2054](https://github.com/meza/jest-chance/commit/99d2054))
+* **circleci:** fixing git ssl errors ([da3dd14](https://github.com/meza/jest-chance/commit/da3dd14))
+* **circleci:** fixing git ssl errors ([68985f5](https://github.com/meza/jest-chance/commit/68985f5))
+* **circleci:** fixing git ssl errors ([b3b36a0](https://github.com/meza/jest-chance/commit/b3b36a0))
+* **circleci:** not signing the release ([6f3d4dd](https://github.com/meza/jest-chance/commit/6f3d4dd))
+
+
+
 ## [0.0.2](https://github.com/meza/jest-chance/compare/v0.0.1...v0.0.2) (2019-03-21)
 
 
