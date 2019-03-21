@@ -15,7 +15,7 @@
     "test:coverage": "jest --coverage",
     "build": "webpack",
     "build:production": "webpack -p",
-    "release": "standard-version -s"
+    "release": "standard-version -s && git push --follow-tags --no-verify origin master"
   },
   "husky": {
     "hooks": {
