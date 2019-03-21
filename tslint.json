@@ -1,0 +1,40 @@
+{
+    "defaultSeverity": "error",
+    "linterOptions": {
+      "exclude": [
+        "{config,coverage,node_modules,__mocks__}/**/*.js",
+        "**/*.json"
+      ]
+    },
+    "extends": [
+      "tslint:latest"
+    ],
+    "jsRules": {
+      "quotemark": [true, "single", "jsx-double"],
+      "jsx-no-multiline-js": false,
+      "max-classes-per-file": [true, 1],
+      "max-line-length": [true, 200],
+      "no-implicit-dependencies": [true, "dev"],
+      "no-submodule-imports": false,
+      "object-literal-key-quotes": false,
+      "object-literal-sort-keys": false,
+      "only-arrow-functions": false,
+      "ordered-imports": false,
+      "semicolon": [true, "always"]
+    },
+    "rules": {
+      "quotemark": [true, "single", "jsx-double"],
+      "interface-name": [true, "never-prefix"],
+      "jsx-no-multiline-js": false,
+      "max-classes-per-file": [true, 1],
+      "max-line-length": [true, 200],
+      "no-implicit-dependencies": [true, "dev"],
+      "no-submodule-imports": false,
+      "object-literal-key-quotes": false,
+      "object-literal-sort-keys": false,
+      "only-arrow-functions": false,
+      "ordered-imports": false,
+      "semicolon": [true, "always"]
+    },
+    "rulesDirectory": []
+}

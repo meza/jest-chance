@@ -1,0 +1,134 @@
+Arguments: 
+  /usr/local/Cellar/node/11.3.0_1/bin/node /Users/meza/.npm/_npx/25503/bin/yarn
+
+PATH: 
+  /Users/meza/.npm/_npx/25503/bin:/Users/meza/dev/exports-service/lib/jest-chance/node_modules/.bin:/Users/meza/Library/Python/2.7/bin:/usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/bin:/Users/meza/Library/Python/3.6/bin:/Users/meza/.yarn/bin:/Users/meza/.yarn/bin:./node_modules/.bin:~/.config/yarn/global/node_modules/.bin/:/Users/meza/dev/vendor/apache-maven-3.5.0/bin:/Users/meza/Library/Android/sdk/tools:/Users/meza/Library/Android/sdk/platform-tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/usr/local/bin:~/dev/vendor/terraform/current
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  11.10.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/meza/dev/exports-service/lib/jest-chance/package.json: Unexpected token } in JSON at position 371
+      at JSON.parse (<anonymous>)
+      at /Users/meza/.npm/_npx/25503/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/meza/.npm/_npx/25503/lib/node_modules/yarn/lib/cli.js:304:30)
+      at /Users/meza/.npm/_npx/25503/lib/node_modules/yarn/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "webpack-server",
+    "version": "1.0.0",
+    "description": "Node server using webpack and babel",
+    "main": "src/index.ts",
+    "license": "MIT",
+    "scripts": {
+      "check-types": "tslint -p . && tsc",
+      "fix-lint": "tslint --fix -p .",
+      "test": "jest",
+      "test:coverage": "jest --coverage",
+      "build": "webpack",
+      "build:production": "webpack -p",
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "yarn fix-lint",
+        "pre-push": "yarn check-types && yarn test:coverage",
+        "post-merge": "install-deps-postmerge"
+      }
+    },
+    "dependencies": {
+      "yarn": "^1.13.0"
+    },
+    "browserslist": [
+      "maintained node versions"
+    ],
+    "devDependencies": {
+      "@babel/core": "^7.3.4",
+      "@babel/plugin-proposal-class-properties": "^7.3.4",
+      "@babel/plugin-proposal-decorators": "^7.0.0",
+      "@babel/plugin-proposal-do-expressions": "^7.0.0",
+      "@babel/plugin-proposal-export-default-from": "^7.0.0",
+      "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+      "@babel/plugin-proposal-function-bind": "^7.0.0",
+      "@babel/plugin-proposal-function-sent": "^7.0.0",
+      "@babel/plugin-proposal-json-strings": "^7.0.0",
+      "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+      "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+      "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+      "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+      "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+      "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
+      "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+      "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+      "@babel/plugin-syntax-import-meta": "^7.0.0",
+      "@babel/polyfill": "^7.0.0",
+      "@babel/preset-env": "^7.3.4",
+      "@babel/preset-typescript": "^7.3.3",
+      "@babel/register": "^7.0.0",
+      "@pact-foundation/pact": "^8.0.5",
+      "@types/chance": "^1.0.1",
+      "@types/jest": "^24.0.9",
+      "babel-core": "^6.26.3",
+      "babel-loader": "^8.0.5",
+      "babel-preset-env": "^1.7.0",
+      "chance": "^1.0.18",
+      "clean-webpack-plugin": "^2.0.0",
+      "husky": "^1.3.1",
+      "install-deps-postmerge": "^1.0.2",
+      "jest": "^24.3.1",
+      "jest-express": "^1.10.0",
+      "jest-extended": "^0.11.1",
+      "terser-webpack-plugin": "^1.2.3",
+      "ts-jest": "^24.0.0",
+      "tslint": "^5.14.0",
+      "tslint-loader": "^3.5.4",
+      "typescript": "^3.3.3333",
+      "webpack": "^4.29.6",
+      "webpack-cli": "^3.2.3",
+      "webpack-dev-server": "^3.2.1"
+    },
+    "jest": {
+      "moduleFileExtensions": [
+        "ts",
+        "js",
+        "json"
+      ],
+      "transform": {
+        "^.+\\.(ts|tsx)$": "ts-jest"
+      },
+      "testMatch": [
+        "**/?(*.)test.ts?(x)"
+      ],
+      "coverageThreshold": {
+        "global": {
+          "branches": 81,
+          "functions": 70,
+          "lines": 81,
+          "statements": 81
+        }
+      },
+      "collectCoverageFrom": [
+        "src/**/*.{ts,tsx}",
+        "!**/*.d.ts",
+        "!**/cypress/**",
+        "!**/node_modules/**",
+        "!**/vendor/**"
+      ],
+      "setupFilesAfterEnv": [
+        "jest-extended"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
