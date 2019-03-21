@@ -1,24 +1,26 @@
 import Chance from 'chance';
 
 const getSeed = () => {
-  const seedGenerator = new Chance();
   if (!process.env.CHANCE_SEED) {
+    const seedGenerator = new Chance();
     process.env.CHANCE_SEED = seedGenerator.hash();
   }
   return process.env.CHANCE_SEED;
 };
 
 const getChance = () => {
-  return new Chance(getSeed());
+  const seed = getSeed();
+  return new Chance(seed);
 };
 
 export const chance = getChance();
 
 const jestThing = () => {
-  getSeed();
+  const seed = getSeed();
 
   // tslint:disable-next-line
-  console.log(`Using Chance Seed: ${process.env.CHANCE_SEED}`);
+  console.log(`Using Chance Seed: ${seed}`);
+  return seed;
 };
 
 export default jestThing;
