@@ -69,7 +69,12 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build
+      - build:
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only: master
       - deploy:
           filters:
             tags:
