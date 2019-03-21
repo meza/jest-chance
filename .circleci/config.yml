@@ -30,8 +30,11 @@ jobs:
           name: Build
           command: yarn build:production
       - run:
+          name: make ssh dir
+          command: mkdir ~/.ssh/ || exit 0
+      - run:
           name: Avoid hosts unknown for github
-          command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+          command: echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
       - run:
           name: Set up git
           command: git config --global user.email "meza@meza.hu" && git config --global user.name "Meza"
