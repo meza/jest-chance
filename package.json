@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Random seed generator for chancejs with jest",
   "main": "src/index.ts",
+  "repository": "https://github.com/stateshifters/jest-chance",
   "license": "MIT",
   "scripts": {
     "check-types": "tslint -p . && tsc",
