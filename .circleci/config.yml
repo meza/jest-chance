@@ -45,6 +45,9 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run:
+          name: Set up git
+          command: git config --global user.email "meza@meza.hu && git config --global user.name "Meza"
+      - run:
           name: Prepare release
           command: yarn standard-version -s
       - run:
