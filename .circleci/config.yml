@@ -43,7 +43,7 @@ jobs:
           command: yarn standard-version
       - run:
           name: Publish package
-          command: git push --no-verify --follow-tags origin master && npm publish
+          command: git push --no-verify --follow-tags origin master
 
       - save_cache:
           paths:
