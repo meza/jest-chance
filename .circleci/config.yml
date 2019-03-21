@@ -44,7 +44,6 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
-      meza [17:10]
       - run:
           name: Avoid hosts unknown for github
           command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
