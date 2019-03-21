@@ -17,6 +17,7 @@
   },
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "yarn fix-lint",
       "pre-push": "yarn check-types && yarn test:coverage",
       "post-merge": "install-deps-postmerge"
@@ -51,7 +52,9 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-typescript": "^7.3.3",
     "@babel/register": "^7.0.0",
-    "@pact-foundation/pact": "^8.0.5",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@commitlint/prompt-cli": "^7.5.0",
+    "commitlint": "^7.5.2",
     "@types/chance": "^1.0.1",
     "@types/jest": "^24.0.9",
     "babel-core": "^6.26.3",
@@ -64,6 +67,7 @@
     "jest": "^24.3.1",
     "jest-express": "^1.10.0",
     "jest-extended": "^0.11.1",
+    "standard-version": "^5.0.1",
     "terser-webpack-plugin": "^1.2.3",
     "ts-jest": "^24.0.0",
     "tslint": "^5.14.0",
@@ -72,6 +76,37 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "header-max-length": [
+        0
+      ],
+      "subject-case": [
+        0
+      ],
+      "type-enum": [
+        2,
+        "always",
+        [
+          "build",
+          "re",
+          "chore",
+          "ci",
+          "docs",
+          "feat",
+          "fix",
+          "perf",
+          "refactor",
+          "revert",
+          "style",
+          "test"
+        ]
+      ]
+    }
   },
   "jest": {
     "moduleFileExtensions": [
