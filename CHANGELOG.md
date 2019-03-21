@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.17](https://github.com/meza/jest-chance/compare/v0.0.15...v0.0.17) (2019-03-21)
+
+
+### Bug Fixes
+
+* **missing package:** added install-deps-postmerge ([1b49604](https://github.com/meza/jest-chance/commit/1b49604))
+
+
+
 ## [0.0.15](https://github.com/meza/jest-chance/compare/v0.0.14...v0.0.15) (2019-03-21)
 
 
