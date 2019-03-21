@@ -76,6 +76,8 @@ module.exports = (a, env) => {
     output: {
       filename: '[name].js',
       path: path.resolve(__dirname, 'dist'),
+      library: 'jest-chance',
+      libraryTarget: 'commonjs2'
     },
     target: 'node',
     performance: {
@@ -123,5 +125,8 @@ module.exports = (a, env) => {
     plugins: [
       new CleanWebpackPlugin(),
     ],
+    externals: [
+      "chance"
+    ]
   };
 };

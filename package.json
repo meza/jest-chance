@@ -1,8 +1,10 @@
 {
   "name": "@stateshifterlabs/jest-chance",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Random seed generator for chancejs with jest",
-  "main": "src/index.ts",
+  "main": "dist/jest-chance.js",
+  "types": "types/index.d.ts",
+  "private": false,
   "repository": "https://github.com/stateshifters/jest-chance",
   "license": "MIT",
   "scripts": {
