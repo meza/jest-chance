@@ -1,6 +1,6 @@
 {
   "name": "jest-chance",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Random seed generator for chancejs with jest",
   "main": "dist/index.js",
   "types": "src/index.d.ts",
@@ -8,6 +8,7 @@
   "repository": "https://github.com/meza/jest-chance",
   "license": "MIT",
   "scripts": {
+    "ci": "yarn check-types && yarn test:coverage",
     "check-types": "tslint -p . && tsc",
     "fix-lint": "tslint --fix -p .",
     "test": "jest",
