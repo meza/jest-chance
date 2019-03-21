@@ -29,22 +29,6 @@ jobs:
       - run:
           name: Build
           command: yarn build:production
-      - run:
-          name: make ssh dir
-          command: mkdir ~/.ssh/ || exit 0
-      - run:
-          name: Avoid hosts unknown for github
-          command: echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
-      - run:
-          name: Set up git
-          command: git config --global user.email "meza@meza.hu" && git config --global user.name "Meza"
-      - run:
-          name: Prepare release
-          command: yarn standard-version
-      - run:
-          name: Publish package
-          command: git push --no-verify --follow-tags origin master
-
       - save_cache:
           paths:
             - node_modules

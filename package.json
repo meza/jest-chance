@@ -14,7 +14,8 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "build": "webpack",
-    "build:production": "webpack -p"
+    "build:production": "webpack -p",
+    "release": "standard-version -s"
   },
   "husky": {
     "hooks": {
