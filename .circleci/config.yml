@@ -49,7 +49,7 @@ jobs:
           command: git config --global user.email "meza@meza.hu" && git config --global user.name "Meza"
       - run:
           name: Prepare release
-          command: yarn standard-version -s
+          command: yarn standard-version
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
