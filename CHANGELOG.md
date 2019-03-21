@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.24](https://github.com/meza/jest-chance/compare/v0.0.23...v0.0.24) (2019-03-21)
+
+
+### Bug Fixes
+
+* **circleci:** no npm publish on build ([7d27d54](https://github.com/meza/jest-chance/commit/7d27d54))
+
+
+
 ## [0.0.23](https://github.com/meza/jest-chance/compare/v0.0.21...v0.0.23) (2019-03-21)
 
 
