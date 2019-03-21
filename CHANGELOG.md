@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.26](https://github.com/meza/jest-chance/compare/v0.0.25...v0.0.26) (2019-03-21)
+
+
+### Bug Fixes
+
+* **deploy-step:** fixed bad yml ([fe5610d](https://github.com/meza/jest-chance/commit/fe5610d))
+* **deploy-step:** fixed yarn release script ([4f0724a](https://github.com/meza/jest-chance/commit/4f0724a))
+
+
+
 ## [0.0.25](https://github.com/meza/jest-chance/compare/v0.0.24...v0.0.25) (2019-03-21)
 
 
