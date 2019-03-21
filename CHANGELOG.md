@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.25](https://github.com/meza/jest-chance/compare/v0.0.24...v0.0.25) (2019-03-21)
+
+
+### Bug Fixes
+
+* **deploy-step:** added checkout and deps ([7a595a9](https://github.com/meza/jest-chance/commit/7a595a9))
+* **release:** manual releases from now ([4a48868](https://github.com/meza/jest-chance/commit/4a48868))
+* **release:** manual releases from now ([63df3bc](https://github.com/meza/jest-chance/commit/63df3bc))
+
+
+
 ## [0.0.24](https://github.com/meza/jest-chance/compare/v0.0.23...v0.0.24) (2019-03-21)
 
 
