@@ -8,7 +8,7 @@
   "repository": "https://github.com/meza/jest-chance",
   "license": "MIT",
   "scripts": {
-    "ci": "yarn check-types && yarn test:coverage",
+    "ci": "yarn check-types && yarn test:coverage && codecov",
     "check-types": "tslint -p . && tsc",
     "fix-lint": "tslint --fix -p .",
     "test": "jest",
@@ -64,6 +64,7 @@
     "babel-preset-env": "^1.7.0",
     "chance": "^1.0.18",
     "clean-webpack-plugin": "^2.0.0",
+    "codecov": "^3.2.0",
     "commitlint": "^7.5.2",
     "husky": "^1.3.1",
     "install-deps-postmerge": "^1.0.2",
