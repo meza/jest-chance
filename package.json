@@ -25,9 +25,10 @@
       "post-merge": "install-deps-postmerge"
     }
   },
-  "dependencies": {
-    "yarn": "^1.13.0"
+  "peerDependencies": {
+    "chance": "^1.0.18"
   },
+  "dependencies": {},
   "browserslist": [
     "maintained node versions"
   ],
@@ -77,7 +78,8 @@
     "typescript": "^3.3.3333",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-dev-server": "^3.2.1",
+    "yarn": "^1.13.0"
   },
   "commitlint": {
     "extends": [
