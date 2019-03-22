@@ -5,8 +5,6 @@ A small library to help javascript projects deal with reproducible randomised te
 
 ![Dependencies](https://david-dm.org/meza/jest-chance.svg)
 
-https://david-dm.org/meza/jest-chance.svg
-
 ## Usage
 
 ### Installing
