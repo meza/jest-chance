@@ -15,9 +15,6 @@ A small library to help javascript projects deal with reproducible randomised te
 >![npm peer dependency version](https://img.shields.io/npm/dependency-version/jest-chance/peer/chance.svg)
 >![npm peer dependency version](https://img.shields.io/npm/dependency-version/jest-chance/dev/jest.svg)
 
-
-![Twitter Follow](https://img.shields.io/twitter/follow/vsbmeza.svg?style=social)
-
 ## Usage
 
 ### Installing
@@ -73,3 +70,6 @@ $ CHANCE_SEED=534a873a618e4e317060f9bc29f9115ad156168b jest
 
 ## Disclaimer:
 There's more to follow, this is a WIP project. Feel free to contribute with pull requests.
+
+---
+![Twitter Follow](https://img.shields.io/twitter/follow/vsbmeza.svg?style=social)
