@@ -2,8 +2,8 @@
 A small library to help javascript projects deal with reproducible randomised test data.
 
 [![CircleCI](https://circleci.com/gh/meza/jest-chance.svg?style=svg&circle-token=b69bc39aa5d08e174ecf97e2c0004078d639c3b0)](https://circleci.com/gh/meza/jest-chance)
-
 ![Dependencies](https://david-dm.org/meza/jest-chance.svg)
+[![install size](https://packagephobia.now.sh/badge?p=jest-chance)](https://packagephobia.now.sh/result?p=jest-chance)
 
 ## Usage
 
