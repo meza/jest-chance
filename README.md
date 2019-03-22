@@ -8,6 +8,15 @@ A small library to help javascript projects deal with reproducible randomised te
 [![install size](https://packagephobia.now.sh/badge?p=jest-chance)](https://packagephobia.now.sh/result?p=jest-chance)
 [![npm downloads](https://img.shields.io/npm/dm/jest-chance.svg?style=flat-square)](http://npm-stat.com/charts.html?package=jest-chance)
 ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/jest-chance.svg)
+![NPM](https://img.shields.io/npm/l/jest-chance.svg)
+
+>Tested with:
+>
+>![npm peer dependency version](https://img.shields.io/npm/dependency-version/jest-chance/peer/chance.svg)
+>![npm peer dependency version](https://img.shields.io/npm/dependency-version/jest-chance/dev/jest.svg)
+
+
+![Twitter Follow](https://img.shields.io/twitter/follow/vsbmeza.svg?style=social)
 
 ## Usage
 
