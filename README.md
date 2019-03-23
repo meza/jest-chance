@@ -11,7 +11,7 @@ A small library to help javascript projects deal with reproducible randomised te
 
 >Tested with:
 >
->![npm peer dependency version](https://img.shields.io/npm/dependency-version/jest-chance/peer/chance.svg)
+>![npm dependency version](https://img.shields.io/npm/dependency-version/jest-chance/chance.svg)
 >![npm peer dependency version](https://img.shields.io/npm/dependency-version/jest-chance/dev/jest.svg)
 
 ## Usage

@@ -25,10 +25,9 @@
       "post-merge": "install-deps-postmerge"
     }
   },
-  "peerDependencies": {
+  "dependencies": {
     "chance": "^1.0.18"
   },
-  "dependencies": {},
   "browserslist": [
     "maintained node versions"
   ],
