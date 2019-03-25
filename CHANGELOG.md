@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.34](https://github.com/meza/jest-chance/compare/v0.0.33...v0.0.34) (2019-03-25)
+
+
+### Bug Fixes
+
+* **newline:** added new line ([e8db880](https://github.com/meza/jest-chance/commit/e8db880))
+
+
+
 ## [0.0.33](https://github.com/meza/jest-chance/compare/v0.0.32...v0.0.33) (2019-03-25)
 
 
