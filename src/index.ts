@@ -19,7 +19,9 @@ const jestThing = () => {
   const seed = getSeed();
 
   // tslint:disable-next-line
-  console.log(`\nUsing Chance Seed: ${seed}`);
+  console.log("\n")
+  // tslint:disable-next-line
+  console.log(`Using Chance Seed: ${seed}`);
   return seed;
 };
 
