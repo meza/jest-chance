@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.1](https://github.com/meza/jest-chance/compare/v0.1.0...v0.1.1) (2019-10-11)
+
+
+### Bug Fixes
+
+* update type declaration file ([0883a66](https://github.com/meza/jest-chance/commit/0883a66))
+* update type declaration file ([ae3f017](https://github.com/meza/jest-chance/commit/ae3f017))
+
+
+
 # [0.1.0](https://github.com/meza/jest-chance/compare/v0.0.34...v0.1.0) (2019-10-11)
 
 
