@@ -11,11 +11,11 @@
     "ci": "yarn check-types && yarn test:coverage && codecov",
     "check-types": "tslint -p . && tsc",
     "fix-lint": "tslint --fix -p .",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test": "jest && yarn build:production",
+    "test:coverage": "jest --coverage && yarn build:production",
     "build": "webpack",
     "build:production": "webpack -p",
-    "release": "yarn build:production && git add dist && standard-version -s && git push --follow-tags --no-verify origin master"
+    "release": "standard-version -s && git push --follow-tags --no-verify origin master"
   },
   "husky": {
     "hooks": {
