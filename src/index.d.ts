@@ -4,5 +4,6 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 /// <reference types="Chance" />
 
+export declare type Seed = number | string;
 export const chance: Chance.Chance;
 export const getChance: (seed?: number | string) =>  Chance.Chance;

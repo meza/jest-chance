@@ -1,6 +1,5 @@
 import Chance from 'chance';
-
-type Seed = number | string;
+import { Seed } from './index.d';
 
 const getSeed = () => {
   if (!process.env.CHANCE_SEED) {
