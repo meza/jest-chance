@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.1.0](https://github.com/meza/jest-chance/compare/v0.0.34...v0.1.0) (2019-10-11)
+
+
+### Bug Fixes
+
+* Define type Seed as namespaces are not supported by babel ([c8d29b7](https://github.com/meza/jest-chance/commit/c8d29b7))
+
+
+### Features
+
+* created new function to pass in a seed ([1f2ee67](https://github.com/meza/jest-chance/commit/1f2ee67))
+
+
+
 ## [0.0.34](https://github.com/meza/jest-chance/compare/v0.0.33...v0.0.34) (2019-03-25)
 
 
