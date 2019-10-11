@@ -5,3 +5,4 @@
 /// <reference types="Chance" />
 
 export const chance: Chance.Chance;
+export const getChance: (seed?: number | string) =>  Chance.Chance;
