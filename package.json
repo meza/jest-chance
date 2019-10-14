@@ -8,20 +8,19 @@
   "repository": "https://github.com/meza/jest-chance",
   "license": "MIT",
   "scripts": {
-    "ci": "yarn check-types && yarn test:coverage && codecov",
-    "check-types": "tslint -p . && tsc",
+    "ci": "yarn build && yarn test:coverage && codecov",
     "fix-lint": "tslint --fix -p .",
-    "test": "jest && yarn build:production",
+    "test": "jest --coverage && yarn build:production",
     "test:coverage": "jest --coverage && yarn build:production",
-    "build": "webpack",
-    "build:production": "webpack -p",
+    "build": "tsc",
+    "build:production": "NODE_ENV=production tsc",
     "release": "standard-version -s && git push --follow-tags --no-verify origin master"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn fix-lint",
-      "pre-push": "yarn check-types && yarn test:coverage",
+      "pre-commit": "yarn build && yarn fix-lint",
+      "pre-push": "yarn build && yarn test:coverage",
       "post-merge": "install-deps-postmerge"
     }
   },
