@@ -3,7 +3,7 @@
     // Target latest version of ECMAScript.
     "outDir": "dist",
     "target": "esnext",
-    "module": "esnext",
+    "module": "commonjs",
     // Search under node_modules for non-relative imports.
     "moduleResolution": "node",
     // Process & infer types from .js files.

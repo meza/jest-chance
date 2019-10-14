@@ -1,21 +1,26 @@
-import Chance from 'chance';
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const chance_1 = __importDefault(require("chance"));
 const getSeed = () => {
     if (!process.env.CHANCE_SEED) {
-        const seedGenerator = new Chance();
+        const seedGenerator = new chance_1.default();
         process.env.CHANCE_SEED = seedGenerator.hash();
     }
     return process.env.CHANCE_SEED;
 };
-export const getChance = (seed) => {
+exports.getChance = (seed) => {
     if (seed) {
-        return new Chance(seed);
+        return new chance_1.default(seed);
     }
     else {
         const randomSeed = getSeed();
-        return new Chance(randomSeed);
+        return new chance_1.default(randomSeed);
     }
 };
-export const chance = getChance();
+exports.chance = exports.getChance();
 const jestThing = () => {
     const seed = getSeed();
     // tslint:disable-next-line
@@ -24,4 +29,4 @@ const jestThing = () => {
     console.log(`Using Chance Seed: ${seed}`);
     return seed;
 };
-export default jestThing;
+exports.default = jestThing;
