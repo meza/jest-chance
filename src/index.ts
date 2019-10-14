@@ -1,7 +1,7 @@
 import Chance from 'chance';
-import { Seed } from './index.d';
+import { Chance as ChanceType, Seed } from './index.d';
 
-const getSeed = () => {
+const getSeed = (): Seed => {
   if (!process.env.CHANCE_SEED) {
     const seedGenerator = new Chance();
     process.env.CHANCE_SEED = seedGenerator.hash();
@@ -9,7 +9,7 @@ const getSeed = () => {
   return process.env.CHANCE_SEED;
 };
 
-export const getChance = (seed?: Seed) => {
+export const getChance = (seed?: Seed): ChanceType => {
   if (seed) {
     return new Chance(seed);
   } else {
@@ -18,7 +18,7 @@ export const getChance = (seed?: Seed) => {
   }
 };
 
-export const chance = getChance();
+export const chance: ChanceType = getChance();
 
 const jestThing = () => {
   const seed = getSeed();
