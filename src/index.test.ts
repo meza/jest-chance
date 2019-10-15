@@ -6,12 +6,12 @@ describe('Jest-Chance', () => {
     jest.resetModules();
     Chance = await import('chance');
     jest.mock('chance', jest.fn().mockImplementation(() => {
-        return jest.fn().mockImplementation(() => {
-          return {
-            hash: hashMock,
-          };
-        });
-      }),
+      return jest.fn().mockImplementation(() => {
+        return {
+          hash: hashMock
+        };
+      });
+    })
     );
   });
 
