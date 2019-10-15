@@ -53,6 +53,19 @@ This will do 2 things:
   1. it will acquire a seed to use
   2. will return you a chance object primed with said seed
   
+### Using with a fixed seed
+Sometimes you would need deterministic generators.
+
+For that reason, you can use the method: `getChance(seed?)`
+
+```js
+import { getChance } from 'jest-chance';
+
+const deterministicChance = getChance('a-fixed-seed');
+ 
+```
+
+  
 ### Watch your logs
 When you run your tests, jest will tell you something like this:
 ```
