@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.chance = exports.getChance = void 0;
 const chance_1 = __importDefault(require("chance"));
 const getSeed = () => {
     if (!process.env.CHANCE_SEED) {
