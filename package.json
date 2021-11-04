@@ -48,7 +48,7 @@
     "jest": "^24.3.1",
     "jest-express": "^1.10.0",
     "jest-extended": "^0.11.1",
-    "standard-version": "^5.0.1",
+    "standard-version": "^8.0.1",
     "ts-jest": "^24.0.0",
     "tslint": "^5.14.0",
     "tslint-loader": "^3.5.4",
