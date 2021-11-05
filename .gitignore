@@ -4,8 +4,8 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/sdks
+!.yarn/unplugged
 !.yarn/versions
-node_modules
 coverage
 .minio
 
