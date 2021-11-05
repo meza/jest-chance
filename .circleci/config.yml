@@ -22,7 +22,7 @@ jobs:
 
       - run:
           name: Install dependencies
-          command: yarn
+          command: yarn install --check-cache
       - run:
           name: Run tests
           command: yarn ci
