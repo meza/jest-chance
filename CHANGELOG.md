@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/meza/jest-chance/compare/v0.1.10...v0.1.11) (2021-11-05)
+
+
+### Bug Fixes
+
+* fixed circle script ([36041be](https://github.com/meza/jest-chance/commit/36041be9d160fd1f9f7c00639288c9406f01b97e))
+
 ### [0.1.10](https://github.com/meza/jest-chance/compare/v0.1.9...v0.1.10) (2021-11-05)
 
 ## [0.1.9](https://github.com/meza/jest-chance/compare/v0.1.8...v0.1.9) (2021-11-04)
