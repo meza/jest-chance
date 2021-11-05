@@ -4,7 +4,6 @@
   "description": "Random seed generator for chancejs with jest",
   "main": "dist/index.js",
   "types": "src/index.d.ts",
-  "private": false,
   "repository": "https://github.com/meza/jest-chance",
   "license": "MIT",
   "scripts": {
@@ -107,5 +106,6 @@
     "setupFilesAfterEnv": [
       "jest-extended"
     ]
-  }
+  },
+  "packageManager": "yarn@3.1.0"
 }
