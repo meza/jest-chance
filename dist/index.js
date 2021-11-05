@@ -12,7 +12,7 @@ const getSeed = () => {
     }
     return process.env.CHANCE_SEED;
 };
-exports.getChance = (seed) => {
+const getChance = (seed) => {
     if (seed) {
         return new chance_1.default(seed);
     }
@@ -21,7 +21,8 @@ exports.getChance = (seed) => {
         return new chance_1.default(randomSeed);
     }
 };
-exports.chance = exports.getChance();
+exports.getChance = getChance;
+exports.chance = (0, exports.getChance)();
 const jestThing = () => {
     const seed = getSeed();
     // eslint-disable-next-line
