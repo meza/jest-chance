@@ -13,8 +13,7 @@
     "test": "yarn lint && yarn lint:types && jest --coverage && yarn build",
     "lint:types": "tsc --noEmit",
     "build": "tsc",
-    "release": "standard-version -s && git push --follow-tags --no-verify origin master",
-    "prepare": "husky install"
+    "release": "standard-version -s && git push --follow-tags --no-verify origin master"
   },
   "dependencies": {
     "chance": "^1.0.18"
