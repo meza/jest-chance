@@ -14,15 +14,8 @@
     "test": "yarn lint && yarn lint:types && jest --coverage && yarn build",
     "lint:types": "tsc --noEmit",
     "build": "tsc",
-    "release": "standard-version -s && git push --follow-tags --no-verify origin master"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn lint:fix && yarn test",
-      "pre-push": "yarn test",
-      "post-merge": "install-deps-postmerge"
-    }
+    "release": "standard-version -s && git push --follow-tags --no-verify origin master",
+    "prepare": "husky install"
   },
   "dependencies": {
     "chance": "^1.0.18"
@@ -43,7 +36,6 @@
     "commitlint": "^14.1.0",
     "eslint": "^8.1.0",
     "eslint-plugin-jest": "^25.2.3",
-    "husky": "^7.0.4",
     "install-deps-postmerge": "^2.0.1",
     "jest": "^27.3.1",
     "jest-express": "^1.10.0",
