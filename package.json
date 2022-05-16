@@ -25,7 +25,7 @@
     "maintained node versions"
   ],
   "devDependencies": {
-    "@commitlint/config-conventional": "^14.1.0",
+    "@commitlint/config-conventional": "^17.0.0",
     "@types/chance": "^1.0.1",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.6",
