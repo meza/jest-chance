@@ -44,6 +44,7 @@
     "jest": "^27.5.1",
     "jest-express": "^1.12.0",
     "jest-extended": "^1.2.1",
+    "jest-junit": "^14.0.1",
     "lefthook": "^1.1.3",
     "pnpm": "^7.14.0",
     "semantic-release": "^19.0.5",
@@ -108,7 +109,10 @@
       "!**/node_modules/**",
       "!**/vendor/**"
     ],
-    "reporters": [ "default", "jest-junit" ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ],
     "setupFilesAfterEnv": [
       "jest-extended"
     ],
