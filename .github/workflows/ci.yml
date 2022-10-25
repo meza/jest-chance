@@ -15,7 +15,7 @@ jobs:
       - name: Set up node
         uses: meza/action-setup-node-pnpm@main
         with:
-          node-version: 17.0.1
+          node-version: latest
           cache-name: pure-dependencies
       - run: pnpm ci
       - run: npx semantic-release --dry-run
