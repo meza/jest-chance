@@ -48,37 +48,6 @@
     "ts-jest": "^27.1.5",
     "typescript": "^4.8.4"
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "header-max-length": [
-        0
-      ],
-      "subject-case": [
-        0
-      ],
-      "type-enum": [
-        2,
-        "always",
-        [
-          "build",
-          "re",
-          "chore",
-          "ci",
-          "docs",
-          "feat",
-          "fix",
-          "perf",
-          "refactor",
-          "revert",
-          "style",
-          "test"
-        ]
-      ]
-    }
-  },
   "jest": {
     "moduleFileExtensions": [
       "ts",
@@ -125,5 +94,10 @@
   },
   "engines": {
     "node": ">=19.0.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
