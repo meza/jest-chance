@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Set up node
-        uses: meza/shared-github-workflows/.github/actions/setup/@main
+        uses: meza/shared-github-workflows/.github/workflows/node-pnpm-setup.yml@main
         with:
           cache-name: pure-dependencies
       - run: pnpm ci
