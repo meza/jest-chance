@@ -1,0 +1,37 @@
+#
+# Lefthook
+#
+# Skip lefthook execution:
+# e.g. `LEFTHOOK=0 git commit -am "Lefthook skipped"`
+# https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md#skip-lefthook-execution
+#
+#
+# Full Lefthook guide:
+# https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
+#
+# Full list of git hooks:
+# https://git-scm.com/docs/githooks
+
+commit-msg:
+  commands:
+    lint-commit-msg:
+      run: npx commitlint --edit
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      tags:
+      run: pnpm lint:fix
+    test:
+      glob: "src/**/*.test.{js,ts,tsx}"
+      run: pnpm test
+pre-push:
+  commands:
+    test:
+      glob: "src/**/*.test.{js,ts,tsx}"
+      run: pnpm test
+post-merge:
+  commands:
+    install-deps-postmerge:
+      glob: "{package.json,pnpm-lock.json}"
+      run: pnpm install --frozen-lockfile

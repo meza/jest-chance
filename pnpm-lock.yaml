@@ -16,6 +16,7 @@ specifiers:
   jest: ^27.3.1
   jest-express: ^1.10.0
   jest-extended: ^1.1.0
+  lefthook: ^1.1.3
   pnpm: ^7.14.0
   standard-version: ^9.3.2
   ts-jest: ^27.0.7
@@ -41,6 +42,7 @@ devDependencies:
   jest: 27.5.1
   jest-express: 1.12.0
   jest-extended: 1.2.1
+  lefthook: 1.1.3
   pnpm: 7.14.0
   standard-version: 9.5.0
   ts-jest: 27.1.5_h2mjkler2cwtrz56xjx3qgassu
@@ -3395,6 +3397,67 @@ packages:
   /kleur/3.0.3:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
     engines: {node: '>=6'}
+    dev: true
+
+  /lefthook-darwin-arm64/1.1.3:
+    resolution: {integrity: sha512-I0mijxHDcBwD/QIP4JJ0LzTNtpCNmQ+7F0zm6z8bJhQ5HTVOvppB1X7hThB0GRwQKXmjEBdJ7wPARaRzsYssug==}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook-darwin-x64/1.1.3:
+    resolution: {integrity: sha512-cAVMG+O/d73k2t0mVDFZqKn1dICjxwwDGyvDdrd/CJi6Zt3m6ZXsdjmrAUWHEJVA3+FXqCzfVEzSPdDk3G6qRQ==}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook-linux-arm64/1.1.3:
+    resolution: {integrity: sha512-guFaRfOH44mw/k+Ki7EhGH+YDmpMV+vv5mKvk99UuCciWFqhCrBV3Dkqxs4iiq922SNkvnEXpN3aYPUpgrO5aw==}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook-linux-x64/1.1.3:
+    resolution: {integrity: sha512-6QJAL1fi0cFJie3BYLNBP/+MjMwvjwph42OY4youx8gWFYrU/+fJKsoC04zvNbDoxGjOBPGXyku9LQ53QM7VkQ==}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook-windows-arm64/1.1.3:
+    resolution: {integrity: sha512-9So7O9cbzmeUVH6alfi8pOtM7wE+u4w0MgSwaxIJ3mVAhwwLb99tZYxlqm6NjdMmJKvYo2+2BLvAA0Vg9HS5vA==}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook-windows-x64/1.1.3:
+    resolution: {integrity: sha512-UqysddqPVCNNicgsBEzpn/Bpuw1B6XUi2BjdsC5euCrjT2YeM9+VpiZB0p19SyTOkqSOr3bOdA/sbtDIC9TTZQ==}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook/1.1.3:
+    resolution: {integrity: sha512-RP/2GYAFx+TbAXjyDaqc5CZJfGUGbTZOC5mltkrH7ERBu7g7Ruy5qQm35R9ZGsRJd5od7YMrzIb4WeqmfmxQrQ==}
+    hasBin: true
+    requiresBuild: true
+    optionalDependencies:
+      lefthook-darwin-arm64: 1.1.3
+      lefthook-darwin-x64: 1.1.3
+      lefthook-linux-arm64: 1.1.3
+      lefthook-linux-x64: 1.1.3
+      lefthook-windows-arm64: 1.1.3
+      lefthook-windows-x64: 1.1.3
     dev: true
 
   /leven/3.1.0:
