@@ -110,5 +110,8 @@
     "setupFilesAfterEnv": [
       "jest-extended"
     ]
+  },
+  "engines": {
+    "node": ">=17.0.1"
   }
 }
