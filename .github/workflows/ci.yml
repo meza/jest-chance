@@ -18,6 +18,23 @@ jobs:
           node-version: latest
           cache-name: pure-dependencies
       - run: pnpm ci
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action/composite@v2
+        if: always()
+        with:
+          junit_files: "reports/junit.xml"
+      - name: Code Coverage Summary Report
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        if: always()
+        with:
+          format: markdown
+          output: file
+          hide_complexity: false
+          badge: true
+          filename: "reports/coverage/cobertura-coverage.xml"
+      - name: Publish code coverage report
+        if: always()
+        run: cat code-coverage-results.md >> $GITHUB_STEP_SUMMARY
       - run: npx semantic-release --dry-run
         id: get-next-version
         env:
