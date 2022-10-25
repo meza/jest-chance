@@ -4,7 +4,7 @@ describe('Jest-Chance', () => {
 
   beforeEach(async () => {
     jest.resetModules();
-    Chance = await import('chance');
+    Chance = jest.requireMock('chance');
     jest.mock('chance', jest.fn().mockImplementation(() => {
       return jest.fn().mockImplementation(() => {
         return {
@@ -26,8 +26,8 @@ describe('Jest-Chance', () => {
       // tslint:disable-next-line
       (await import('./index')).chance;
 
-      expect(Chance).toHaveBeenCalledTimes(1);
-      expect(Chance).toHaveBeenCalledWith(randomSeed);
+      expect(jest.mocked(Chance)).toHaveBeenCalledTimes(1);
+      expect(jest.mocked(Chance)).toHaveBeenCalledWith(randomSeed);
     });
   });
 
