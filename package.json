@@ -10,10 +10,10 @@
   "repository": "https://github.com/meza/jest-chance",
   "license": "MIT",
   "scripts": {
-    "ci": "yarn test && yarn build && codecov",
+    "ci": "pnpm test && yarn build && codecov",
     "lint": "eslint --ext ts src",
     "lint:fix": "eslint --fix --ext ts src",
-    "test": "yarn lint && yarn lint:types && jest --coverage && yarn build",
+    "test": "pnpm lint && yarn lint:types && jest --coverage && yarn build",
     "lint:types": "tsc --noEmit",
     "build": "tsc --project ./tsconfig.es6.json && tsc --project ./tsconfig.cjs.json",
     "release": "standard-version -s && git push --follow-tags --no-verify origin master"
@@ -40,12 +40,12 @@
     "jest": "^27.3.1",
     "jest-express": "^1.10.0",
     "jest-extended": "^1.1.0",
+    "pnpm": "^7.14.0",
     "standard-version": "^9.3.2",
     "ts-jest": "^27.0.7",
     "tslint": "^6.1.3",
     "tslint-loader": "^3.5.4",
-    "typescript": "^4.4.4",
-    "yarn": "^1.13.0"
+    "typescript": "^4.4.4"
   },
   "commitlint": {
     "extends": [
