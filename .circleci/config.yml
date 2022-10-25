@@ -22,13 +22,13 @@ jobs:
 
       - run:
           name: Install dependencies
-          command: yarn
+          command: pnpm i
       - run:
           name: Run tests
-          command: yarn ci
+          command: pnpm ci
       - run:
           name: Build
-          command: yarn build
+          command: pnpm build
       - save_cache:
           paths:
             - node_modules
