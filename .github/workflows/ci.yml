@@ -1,0 +1,26 @@
+name: Verify
+
+on: [ push ]
+
+env:
+  LEFTHOOK: 0
+
+jobs:
+  verify:
+    name: 🔎 Lint and Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up node
+        uses: meza/shared-github-workflows/.github/actions/setup/@main
+        with:
+          cache-name: pure-dependencies
+      - run: pnpm ci
+      - run: npx semantic-release --dry-run
+        id: get-next-version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    outputs:
+      new-release-published: ${{ steps.get-next-version.outputs.new-release-published }}
+      new-release-version: ${{ steps.get-next-version.outputs.new-release-version }}
