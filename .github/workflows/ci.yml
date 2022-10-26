@@ -21,9 +21,12 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.5.0
+      - uses: actions/checkout@v3
       - name: Set up node
-        uses: ./.github/actions/setup/
+        uses: meza/action-setup-node-pnpm@main
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache-name: ${{ jobs.verify.outputs.cache-name }}
 
       - name: 🚀 Build & Release
         env:
