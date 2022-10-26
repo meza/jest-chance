@@ -3,14 +3,15 @@
   "version": "0.1.11",
   "description": "Random seed generator for chancejs with jest",
   "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/types/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    }
+    "types": "./dist/types/index.d.ts",
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js"
   },
-  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
   "type": "module",
   "private": false,
@@ -22,7 +23,7 @@
     "lint": "eslint --ext ts src",
     "lint:fix": "eslint --fix --ext ts src",
     "test": "pnpm lint && vitest run --coverage && pnpm build",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "semantic-release": "semantic-release",
     "release": "semantic-release"
   },

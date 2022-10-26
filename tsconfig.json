@@ -7,7 +7,7 @@
     "emitDeclarationOnly": false,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "outDir": "./dist",
+    "outDir": "./dist/esm",
     "declarationDir": "./dist/types",
     "noPropertyAccessFromIndexSignature": false,
     "isolatedModules": true,
