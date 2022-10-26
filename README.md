@@ -27,17 +27,39 @@ npm install -D jest-chance
 
 To have a random seed for each test execution, we need to tell Jest to use this library.
 
-In your `package.json`, add the following:
+In your jest config, add the following:
 
 ```json
-"jest": {
+  ...
   "globalSetup": "jest-chance"
-}
+  ...
 ```
+
+### Add to Vitest
+
+Create a file called `vitest.setup.ts` in the root of your project and add the following:
+
+```ts
+import chanceSetup from 'jest-chance';
+
+export const setup = () => {
+  chanceSetup();
+};
+```
+
+Then in your `vitest.config.ts` add the following:
+
+```json
+  ...
+  globalSetup: './vitest.setup.ts',
+  ...
+ ```
+
 
 ### Replace chance in your tests
 
 Within your tests, you might have something like this:
+
 >**Old Chance usage, don't copy this**
 >```js 
 >import Chance from 'chance';
@@ -54,7 +76,7 @@ This will do 2 things:
 1. it will acquire a seed to use
 2. will return you a chance object primed with said seed
   
-### Using with a fixed seed
+### Using with a fixed seed
 
 Sometimes you would need deterministic generators. 
 For that reason, you can use the method: `getChance(seed?)`
