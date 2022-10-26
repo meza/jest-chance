@@ -1,6 +1,6 @@
 {
   "name": "jest-chance",
-  "version": "develoment",
+  "version": "0.1.11",
   "description": "Random seed generator for chancejs with jest",
   "exports": {
     ".": {
