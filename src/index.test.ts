@@ -1,47 +1,36 @@
-describe('Jest-Chance', () => {
-  let Chance: jest.Mocked<any>;
-  const hashMock = jest.fn();
+import Chance from 'chance';
 
-  beforeEach(async () => {
-    jest.resetModules();
-    Chance = jest.requireMock('chance');
-    jest.mock('chance', jest.fn().mockImplementation(() => {
-      return jest.fn().mockImplementation(() => {
-        return {
-          hash: hashMock
-        };
-      });
-    })
-    );
+import { describe, it, expect, beforeEach, vi } from 'vitest';
+
+vi.mock('chance');
+
+describe('Test Chance', () => {
+  let chanceMock: Chance.Chance;
+  beforeEach(() => {
+    chanceMock = new Chance();
+    vi.resetAllMocks();
+    vi.resetModules();
   });
 
   describe('When a chance instance is requested with a specific seed', () => {
-    const randomSeed = Date.now().toString();
-
-    beforeEach(() => {
-      process.env.CHANCE_SEED = randomSeed;
-    });
-
     it('It passes it through', async () => {
-      // tslint:disable-next-line
-      (await import('./index')).chance;
+      const randomSeed = Date.now().toString();
+      process.env.CHANCE_SEED = randomSeed;
 
-      expect(jest.mocked(Chance)).toHaveBeenCalledTimes(1);
-      expect(jest.mocked(Chance)).toHaveBeenCalledWith(randomSeed);
+      await import('./index.js');
+
+      expect(vi.mocked(Chance)).toHaveBeenCalledTimes(1);
+      expect(vi.mocked(Chance)).toHaveBeenCalledWith(randomSeed);
     });
   });
 
   describe('When a chance instance is requested without a seed', () => {
-    const randomSeed = Date.now().toString();
-    beforeEach(() => {
-      delete process.env.CHANCE_SEED;
-      hashMock.mockReset();
-      hashMock.mockReturnValueOnce(randomSeed);
-    });
-
     it('It generates a new one', async () => {
-      // tslint:disable-next-line
-      (await import('./index')).chance;
+      const randomSeed = Date.now().toString();
+      delete process.env.CHANCE_SEED;
+      vi.mocked(chanceMock.hash).mockReturnValue(randomSeed);
+
+      await import('./index.js');
 
       expect(Chance).toHaveBeenCalledTimes(2);
       expect(Chance).toHaveBeenNthCalledWith(1);
@@ -50,15 +39,14 @@ describe('Jest-Chance', () => {
   });
 
   describe('getChance without seed', () => {
-    const randomSeed = Date.now().toString();
-    beforeEach(() => {
-      delete process.env.CHANCE_SEED;
-      hashMock.mockReset();
-      hashMock.mockReturnValueOnce(randomSeed);
-    });
-
     it('It generates a new seed', async () => {
-      (await import('./index')).getChance();
+      const randomSeed = Date.now().toString();
+      delete process.env.CHANCE_SEED;
+      vi.mocked(chanceMock.hash).mockReturnValue(randomSeed);
+
+      const { getChance } = await import('./index.js');
+      getChance();
+
       expect(Chance).toHaveBeenCalledTimes(3);
       expect(Chance).toHaveBeenNthCalledWith(1);
       expect(Chance).toHaveBeenNthCalledWith(3, randomSeed);
@@ -66,45 +54,42 @@ describe('Jest-Chance', () => {
   });
 
   describe('getChance with a seed', () => {
-    const randomSeed = Date.now().toString();
-    beforeEach(() => {
-      delete process.env.CHANCE_SEED;
-      hashMock.mockReset();
-      hashMock.mockReturnValueOnce(randomSeed);
-    });
-
     it('It returns the specified seed', async () => {
-      (await import('./index')).getChance(randomSeed);
+      const randomSeed = Date.now().toString();
+      delete process.env.CHANCE_SEED;
+      vi.mocked(chanceMock.hash).mockReturnValue(randomSeed);
+
+      const { getChance } = await import('./index.js');
+      getChance(randomSeed);
+
       expect(Chance).toHaveBeenCalledTimes(3);
-      expect(hashMock).toHaveBeenCalledTimes(1);
+      expect(vi.mocked(chanceMock.hash)).toHaveBeenCalledTimes(1);
       expect(Chance).toHaveBeenNthCalledWith(3, randomSeed);
     });
   });
 
   describe('When a test runner is requested with a specific seed', () => {
-    const randomSeed = Date.now().toString();
-
-    beforeEach(() => {
-      process.env.CHANCE_SEED = randomSeed;
-    });
-
     it('It passes it through', async () => {
-      // tslint:disable-next-line
-      const testRunnerSeed = (await import('./index')).default();
+      const randomSeed = Date.now().toString();
+      process.env.CHANCE_SEED = randomSeed;
+
+      const module = await import('./index.js');
+      const testRunnerSeed = module.default();
+
       expect(testRunnerSeed).toBe(randomSeed);
     });
   });
 
   describe('When a test runner is requested without a seed', () => {
-    const randomSeed = Date.now().toString();
-    beforeEach(() => {
-      delete process.env.CHANCE_SEED;
-      hashMock.mockReset();
-      hashMock.mockReturnValueOnce(randomSeed);
-    });
-
     it('It generates a new one', async () => {
-      const testRunnerSeed = (await import('./index')).default();
+      const randomSeed = Date.now().toString();
+
+      delete process.env.CHANCE_SEED;
+      vi.mocked(chanceMock.hash).mockReturnValue(randomSeed);
+
+      const module = await import('./index.js');
+      const testRunnerSeed = module.default();
+
       expect(testRunnerSeed).toBe(randomSeed);
     });
   });

@@ -1,7 +1,6 @@
 import Chance from 'chance';
-import { Chance as ChanceType, Seed } from './index.d';
 
-const getSeed = (): Seed => {
+const getSeed = () => {
   if (!process.env.CHANCE_SEED) {
     const seedGenerator = new Chance();
     process.env.CHANCE_SEED = seedGenerator.hash();
@@ -9,7 +8,7 @@ const getSeed = (): Seed => {
   return process.env.CHANCE_SEED;
 };
 
-export const getChance = (seed?: Seed): ChanceType => {
+export const getChance = (seed?: Chance.Seed) => {
   if (seed) {
     return new Chance(seed);
   } else {
@@ -18,9 +17,9 @@ export const getChance = (seed?: Seed): ChanceType => {
   }
 };
 
-export const chance: ChanceType = getChance();
+export const chance = getChance();
 
-const jestThing = () => {
+export default () => {
   const seed = getSeed();
 
   // eslint-disable-next-line
@@ -30,5 +29,3 @@ const jestThing = () => {
   console.log(`Using Chance Seed: ${seed}`);
   return seed;
 };
-
-export default jestThing;
