@@ -26,7 +26,7 @@ jobs:
         uses: meza/action-setup-node-pnpm@main
         with:
           node-version: ${{ inputs.node-version }}
-          cache-name: ${{ jobs.verify.outputs.cache-name }}
+          cache-name: ${{ needs.verify.outputs.cache-name }}
 
       - name: 🚀 Build & Release
         env:
