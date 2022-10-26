@@ -5,14 +5,12 @@
   "exports": {
     ".": {
       "import": {
-        "types": "dist/types/index.d.ts",
-        "default": "dist/index.js"
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/index.js"
       }
     }
   },
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/types/index.d.ts",
   "private": false,
   "repository": "https://github.com/meza/jest-chance",
   "license": "MIT",
