@@ -1,8 +1,6 @@
 # Jest-Chance ![npm](https://img.shields.io/npm/v/jest-chance.svg)
 A small library to help javascript projects deal with reproducible randomised test data.
 
-![CircleCI token](https://img.shields.io/circleci/token/6a2612980deeac020acd1c4401785f06e91a52af/project/github/meza/jest-chance/master.svg?label=circleci)
-[![codecov](https://codecov.io/gh/meza/jest-chance/branch/master/graph/badge.svg)](https://codecov.io/gh/meza/jest-chance)
 [![install size](https://packagephobia.now.sh/badge?p=jest-chance)](https://packagephobia.now.sh/result?p=jest-chance)
 [![npm downloads](https://img.shields.io/npm/dm/jest-chance.svg?style=flat-square)](http://npm-stat.com/charts.html?package=jest-chance)
 ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/jest-chance.svg)

@@ -1,0 +1,17 @@
+name: Verify
+
+on: [ push ]
+
+env:
+  LEFTHOOK: 0
+
+jobs:
+  verify:
+    uses: meza/shared-github-workflows/.github/workflows/default-node-pnpm-ci.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    with:
+        node-version: "latest"
+        junit-report-path: "reports/junit.xml"
+        cobertura-report-path: "reports/coverage/cobertura-coverage.xml"
