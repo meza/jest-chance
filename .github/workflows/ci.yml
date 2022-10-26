@@ -27,8 +27,9 @@ jobs:
         with:
           node-version: ${{ inputs.node-version }}
           cache-name: ${{ needs.verify.outputs.cache-name }}
-
-      - name: 🚀 Build & Release
+      - name: "Build"
+        run: pnpm build
+      - name: 🚀 Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
