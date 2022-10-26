@@ -9,7 +9,7 @@ jobs:
   verify:
     uses: meza/shared-github-workflows/.github/workflows/default-node-pnpm-ci.yml@main
     secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     with:
         node-version: "latest"
