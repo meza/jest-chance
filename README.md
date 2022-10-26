@@ -49,7 +49,7 @@ export const setup = () => {
 
 Then in your `vitest.config.ts` add the following:
 
-```json
+```ts
   ...
   globalSetup: './vitest.setup.ts',
   ...
