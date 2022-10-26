@@ -6,17 +6,12 @@ env:
   LEFTHOOK: 0
 
 jobs:
-
   verify:
-    name: 🔎 Lint and Test
-    runs-on: ubuntu-latest
     uses: meza/shared-github-workflows/.github/workflows/default-node-pnpm-ci.yml@main
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        npm-token: ${{ secrets.NPM_TOKEN }}
         node-version: "latest"
         junit-report-path: "reports/junit.xml"
         cobertura-report-path: "reports/coverage/cobertura-coverage.xml"
-    outputs:
-      new-release-published: ${{ jobs.verify.outputs.new-release-published }}
-      new-release-version: ${{ jobs.verify.outputs.new-release-version }}
