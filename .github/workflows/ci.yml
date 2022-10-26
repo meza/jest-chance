@@ -25,12 +25,12 @@ jobs:
       - name: Set up node
         uses: meza/action-setup-node-pnpm@main
         with:
-          node-version: ${{ inputs.node-version }}
+          node-version: latest
           cache-name: ${{ needs.verify.outputs.cache-name }}
       - name: "Build"
-        run: pnpm build
+        run: pnpm build && ls -la dist
       - name: 🚀 Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm release
+        run: pnpm release --dry-run
