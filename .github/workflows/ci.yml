@@ -15,3 +15,18 @@ jobs:
         node-version: "latest"
         junit-report-path: "reports/junit.xml"
         cobertura-report-path: "reports/coverage/cobertura-coverage.xml"
+  release:
+    needs: [ verify ]
+    if: needs.verify.outputs.new-release-published == 'true'
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.5.0
+      - name: Set up node
+        uses: ./.github/actions/setup/
+
+      - name: 🚀 Build & Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm release
