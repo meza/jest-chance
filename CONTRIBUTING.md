@@ -14,12 +14,12 @@ We use github to host code, to track issues and feature requests, as well as acc
 ## We Use [Github Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
 Pull requests are the best way to propose changes to the codebase (we use [Github Flow](https://guides.github.com/introduction/flow/index.html)). We actively welcome your pull requests:
 
-1. Fork the repo and create your branch from `master`.
+1. Fork the repo and create your branch from `next`.
 2. If you've added code that should be tested, add tests.
 3. If you've changed APIs, update the documentation.
 4. Ensure the test suite passes.
 5. Make sure your code lints.
-6. Issue that pull request!
+6. Issue that pull request onto the `next` branch!
 
 ## Report bugs using Github's [issues](https://github.com/meza/jest-chance/issues)
 We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/meza/jest-chance/issues/new); it's that easy!
@@ -36,7 +36,7 @@ We use GitHub issues to track public bugs. Report a bug by [opening a new issue]
 - Notes (possibly including why you think this might be happening, or things you have tried and which didn't work)
 
 ## Use a Consistent Coding Style
-All code must pass `yarn check-types`, which will ensure that the standard is met.
+All code must pass `pnpm ci`, which will ensure that the standard is met.
 
 ## License
 By contributing to the project, you agree that your contributions will be licensed under the [MIT License](http://choosealicense.com/licenses/mit/).

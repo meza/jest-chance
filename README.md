@@ -1,8 +1,6 @@
 # Jest-Chance ![npm](https://img.shields.io/npm/v/jest-chance.svg)
 A small library to help javascript projects deal with reproducible randomised test data.
 
-![CircleCI token](https://img.shields.io/circleci/token/6a2612980deeac020acd1c4401785f06e91a52af/project/github/meza/jest-chance/master.svg?label=circleci)
-[![codecov](https://codecov.io/gh/meza/jest-chance/branch/master/graph/badge.svg)](https://codecov.io/gh/meza/jest-chance)
 [![install size](https://packagephobia.now.sh/badge?p=jest-chance)](https://packagephobia.now.sh/result?p=jest-chance)
 [![npm downloads](https://img.shields.io/npm/dm/jest-chance.svg?style=flat-square)](http://npm-stat.com/charts.html?package=jest-chance)
 ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/jest-chance.svg)
@@ -29,17 +27,39 @@ npm install -D jest-chance
 
 To have a random seed for each test execution, we need to tell Jest to use this library.
 
-In your `package.json`, add the following:
+In your jest config, add the following:
 
 ```json
-"jest": {
+  ...
   "globalSetup": "jest-chance"
-}
+  ...
 ```
+
+### Add to Vitest
+
+Create a file called `vitest.setup.ts` in the root of your project and add the following:
+
+```ts
+import chanceSetup from 'jest-chance';
+
+export const setup = () => {
+  chanceSetup();
+};
+```
+
+Then in your `vitest.config.ts` add the following:
+
+```ts
+  ...
+  globalSetup: './vitest.setup.ts',
+  ...
+ ```
+
 
 ### Replace chance in your tests
 
 Within your tests, you might have something like this:
+
 >**Old Chance usage, don't copy this**
 >```js 
 >import Chance from 'chance';
@@ -56,7 +76,7 @@ This will do 2 things:
 1. it will acquire a seed to use
 2. will return you a chance object primed with said seed
   
-### Using with a fixed seed
+### Using with a fixed seed
 
 Sometimes you would need deterministic generators. 
 For that reason, you can use the method: `getChance(seed?)`

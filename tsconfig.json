@@ -1,27 +1,31 @@
 {
+  "extends": "@meza/tsconfig-base",
   "compilerOptions": {
-    // Target latest version of ECMAScript.
-    "outDir": "dist",
-    "target": "esnext",
-    "module": "ES6",
-    // Search under node_modules for non-relative imports.
-    "moduleResolution": "node",
-    // Process & infer types from .js files.
-    "allowJs": false,
-    // Enable strictest settings like strictNullChecks & noImplicitAny.
-    "strict": true,
-    // Disallow features that require cross-file information for emit.
-    "isolatedModules": false,
-    // Import non-ES modules as default imports.
-    "esModuleInterop": true,
-    "declarationDir": "dist/types",
-    "declaration": true,
-    "declarationMap": true
+    "target": "ES2020",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "emitDeclarationOnly": false,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "outDir": "./dist/esm",
+    "declarationDir": "./dist/types",
+    "noPropertyAccessFromIndexSignature": false,
+    "isolatedModules": true,
+    "sourceRoot": "src",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ]
   },
   "include": [
-    "src"
+    "src/**/*"
   ],
   "exclude": [
-    "**/*.test.*"
-  ]
+    "node_modules",
+    "src/**/*.test.ts",
+    "tests/**/*"
+  ],
+  "ts-node": {
+    "files": true
+  }
 }

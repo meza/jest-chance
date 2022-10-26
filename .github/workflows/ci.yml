@@ -1,0 +1,36 @@
+name: Verify
+
+on: [ push ]
+
+env:
+  LEFTHOOK: 0
+
+jobs:
+  verify:
+    uses: meza/shared-github-workflows/.github/workflows/default-node-pnpm-ci.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    with:
+        node-version: "latest"
+        junit-report-path: "reports/junit.xml"
+        cobertura-report-path: "reports/coverage/cobertura-coverage.xml"
+  release:
+    needs: [ verify ]
+    if: needs.verify.outputs.new-release-published == 'true'
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up node
+        uses: meza/action-setup-node-pnpm@main
+        with:
+          node-version: latest
+          cache-name: ${{ needs.verify.outputs.cache-name }}
+      - name: "Build"
+        run: pnpm build && ls -la dist
+      - name: 🚀 Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm release

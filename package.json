@@ -2,111 +2,64 @@
   "name": "jest-chance",
   "version": "0.1.11",
   "description": "Random seed generator for chancejs with jest",
+  "exports": {
+    "types": "./dist/types/index.d.ts",
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js"
+  },
+  "files": [
+    "dist/"
+  ],
   "main": "dist/cjs/index.js",
-  "module": "dist/es6/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
   "type": "module",
-  "typings": "dist/types/index.d.ts",
   "private": false,
   "repository": "https://github.com/meza/jest-chance",
   "license": "MIT",
   "scripts": {
-    "ci": "yarn test && yarn build && codecov",
+    "clean:githooks": "lefthook uninstall -k",
+    "ci": "pnpm test && pnpm build",
     "lint": "eslint --ext ts src",
     "lint:fix": "eslint --fix --ext ts src",
-    "test": "yarn lint && yarn lint:types && jest --coverage && yarn build",
-    "lint:types": "tsc --noEmit",
-    "build": "tsc --project ./tsconfig.es6.json && tsc --project ./tsconfig.cjs.json",
-    "release": "standard-version -s && git push --follow-tags --no-verify origin master"
+    "test": "pnpm lint && vitest run --coverage && pnpm build",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "semantic-release": "semantic-release",
+    "release": "semantic-release"
   },
   "dependencies": {
-    "chance": "^1.0.18"
+    "chance": "^1.1.9"
   },
-  "browserslist": [
-    "maintained node versions"
-  ],
   "devDependencies": {
     "@commitlint/config-conventional": "^14.1.0",
-    "@types/chance": "^1.0.1",
-    "@types/jest": "^27.0.2",
-    "@types/node": "^16.11.6",
-    "@typescript-eslint/eslint-plugin": "^5.3.0",
-    "@typescript-eslint/parser": "^5.3.0",
-    "chance": "^1.0.18",
-    "codecov": "^3.2.0",
+    "@meza/tsconfig-base": "^1.1.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@types/chance": "^1.1.3",
+    "@types/node": "^16.18.0",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "@vitest/coverage-c8": "^0.24.3",
+    "c8": "^7.12.0",
     "commitlint": "^14.1.0",
-    "eslint": "^8.1.0",
-    "eslint-plugin-jest": "^25.2.3",
+    "eslint": "^8.26.0",
+    "eslint-config-tailored-tunes": "^5.0.2",
+    "eslint-plugin-jest": "^25.7.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-security": "^1.5.0",
     "install-deps-postmerge": "^2.0.1",
-    "jest": "^27.3.1",
-    "jest-express": "^1.10.0",
-    "jest-extended": "^1.1.0",
-    "standard-version": "^9.3.2",
-    "ts-jest": "^27.0.7",
-    "tslint": "^6.1.3",
-    "tslint-loader": "^3.5.4",
-    "typescript": "^4.4.4",
-    "yarn": "^1.13.0"
+    "lefthook": "^1.1.3",
+    "pnpm": "^7.14.0",
+    "semantic-release": "^19.0.5",
+    "semantic-release-export-data": "^1.0.1",
+    "typescript": "^4.8.4",
+    "vitest": "^0.24.3"
+  },
+  "engines": {
+    "node": ">=19.0.0"
   },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "header-max-length": [
-        0
-      ],
-      "subject-case": [
-        0
-      ],
-      "type-enum": [
-        2,
-        "always",
-        [
-          "build",
-          "re",
-          "chore",
-          "ci",
-          "docs",
-          "feat",
-          "fix",
-          "perf",
-          "refactor",
-          "revert",
-          "style",
-          "test"
-        ]
-      ]
-    }
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "js",
-      "json"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "ts-jest"
-    },
-    "testMatch": [
-      "**/?(*.)test.ts?(x)"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}",
-      "!**/*.d.ts",
-      "!**/cypress/**",
-      "!**/node_modules/**",
-      "!**/vendor/**"
-    ],
-    "setupFilesAfterEnv": [
-      "jest-extended"
     ]
   }
 }
