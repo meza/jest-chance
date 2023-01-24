@@ -43,7 +43,7 @@
     "commitlint": "^14.1.0",
     "eslint": "^8.26.0",
     "eslint-config-tailored-tunes": "^5.0.2",
-    "eslint-plugin-jest": "^25.7.0",
+    "eslint-plugin-jest": "^27.0.0",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-security": "^1.5.0",
     "install-deps-postmerge": "^2.0.1",
