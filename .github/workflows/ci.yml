@@ -18,7 +18,7 @@ jobs:
     needs: [ verify ]
     if: needs.verify.outputs.new-release-published == 'true'
     name: Release
-    runs-on: self-hosted
+    runs-on: meza-ubuntu-slim
     steps:
       - uses: actions/checkout@v3
       - name: Set up node
