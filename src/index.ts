@@ -11,10 +11,9 @@ const getSeed = () => {
 export const getChance = (seed?: Chance.Seed) => {
   if (seed) {
     return new Chance(seed);
-  } else {
-    const randomSeed = getSeed();
-    return new Chance(randomSeed);
   }
+  const randomSeed = getSeed();
+  return new Chance(randomSeed);
 };
 
 export const chance = getChance();

@@ -1,0 +1,33 @@
+{
+  "extends": ["@meza/biome"],
+  "files": {
+    "includes": [
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.css",
+      "**/*.json",
+      "**/*.js",
+      "!**/*.snap",
+      "!**/node_modules/**",
+      "!**/coverage/**",
+      "!**/dist/**",
+      "!**/out/**",
+      "!**/release/**",
+      "!**/test-results/**",
+      "!**/playwright-report/**",
+      "!**/.tmp/**"
+    ]
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.test.{ts,tsx}"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noMagicNumbers": "off"
+          }
+        }
+      }
+    }
+  ]
+}

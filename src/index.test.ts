@@ -1,6 +1,5 @@
 import Chance from 'chance';
-
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 vi.mock('chance');
 
@@ -93,5 +92,4 @@ describe('Test Chance', () => {
       expect(testRunnerSeed).toBe(randomSeed);
     });
   });
-
 });
