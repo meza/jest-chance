@@ -7,25 +7,90 @@ env:
 
 jobs:
   verify:
-    uses: meza/shared-github-workflows/.github/workflows/default-node-pnpm-ci.yml@main
-    secrets:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    with:
-        node-version: "latest"
-        junit-report-path: "reports/junit.xml"
-        cobertura-report-path: "reports/coverage/cobertura-coverage.xml"
+    name: 🔎 Lint and Test
+    runs-on: meza-ubuntu-latest
+    outputs:
+      new-release-published: ${{ steps.get-next-version.outputs.new-release-published }}
+      new-release-version: ${{ steps.get-next-version.outputs.new-release-version }}
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Use Node.js latest
+        uses: actions/setup-node@v4.4.0
+        with:
+          node-version: latest
+          cache: pnpm
+
+      - name: Install pnpm
+        id: pnpm-install
+        uses: pnpm/action-setup@v4.2.0
+        with:
+          version: latest
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        shell: bash
+
+      - run: pnpm run ci
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action/composite@d0a4676d0e0b938bc201470d88276b7c74c712b3 # v2.24.0
+        if: always()
+        with:
+          junit_files: reports/junit.xml
+
+      - name: Code Coverage Summary Report
+        uses: irongut/CodeCoverageSummary@51cc3a756ddcd398d447c044c02cb6aa83fdae95 # v1.3.0
+        if: always()
+        with:
+          format: markdown
+          output: file
+          hide_complexity: false
+          badge: true
+          filename: reports/coverage/cobertura-coverage.xml
+
+      - name: Publish code coverage report
+        if: always()
+        run: cat code-coverage-results.md >> $GITHUB_STEP_SUMMARY
+
+      - name: Add Coverage PR Comment
+        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
+        if: github.event_name == 'pull_request'
+        with:
+          recreate: true
+          path: code-coverage-results.md
+
+      - name: Get next release version
+        id: get-next-version
+        run: npx semantic-release --dry-run
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish release status
+        run: echo "Need release? ${{ steps.get-next-version.outputs.new-release-published }}" >> $GITHUB_STEP_SUMMARY
+
   release:
     needs: [ verify ]
     if: needs.verify.outputs.new-release-published == 'true'
     name: Release
-    runs-on: self-hosted
+    runs-on: meza-ubuntu-slim
     steps:
       - uses: actions/checkout@v3
-      - name: Set up node
-        uses: meza/action-setup-node-pnpm@main
+      - name: Use Node.js latest
+        uses: actions/setup-node@v4.4.0
         with:
           node-version: latest
-          cache-name: ${{ needs.verify.outputs.cache-name }}
+          cache: pnpm
+      - name: Install pnpm
+        id: pnpm-install
+        uses: pnpm/action-setup@v4.2.0
+        with:
+          version: latest
+          run_install: false
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        shell: bash
       - name: "Build"
         run: pnpm build && ls -la dist
       - name: 🚀 Release
