@@ -1,6 +1,12 @@
 name: Verify
 
 on: [ push ]
+permissions:
+  issues: write
+  checks: write
+  contents: write
+  pull-requests: write
+  id-token: write
 
 env:
   LEFTHOOK: 0
