@@ -15,18 +15,18 @@ jobs:
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
-      - name: Use Node.js latest
-        uses: actions/setup-node@v4.4.0
-        with:
-          node-version: latest
-          cache: pnpm
-
       - name: Install pnpm
         id: pnpm-install
         uses: pnpm/action-setup@v4.2.0
         with:
           version: latest
           run_install: false
+
+      - name: Use Node.js latest
+        uses: actions/setup-node@v4.4.0
+        with:
+          node-version: latest
+          cache: pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -77,17 +77,20 @@ jobs:
     runs-on: meza-ubuntu-slim
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js latest
-        uses: actions/setup-node@v4.4.0
-        with:
-          node-version: latest
-          cache: pnpm
+
       - name: Install pnpm
         id: pnpm-install
         uses: pnpm/action-setup@v4.2.0
         with:
           version: latest
           run_install: false
+
+      - name: Use Node.js latest
+        uses: actions/setup-node@v4.4.0
+        with:
+          node-version: latest
+          cache: pnpm
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
         shell: bash
