@@ -4,9 +4,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 vi.mock('chance');
 
 describe('Test Chance', () => {
-  let chanceMock: Chance.Chance;
   beforeEach(() => {
-    chanceMock = new Chance();
     vi.resetAllMocks();
     vi.resetModules();
   });
@@ -27,7 +25,7 @@ describe('Test Chance', () => {
     it('It generates a new one', async () => {
       const randomSeed = Date.now().toString();
       delete process.env.CHANCE_SEED;
-      vi.mocked(chanceMock.hash).mockReturnValue(randomSeed);
+      vi.mocked(Chance.prototype.hash).mockReturnValue(randomSeed);
 
       await import('./index.js');
 
@@ -41,7 +39,7 @@ describe('Test Chance', () => {
     it('It generates a new seed', async () => {
       const randomSeed = Date.now().toString();
       delete process.env.CHANCE_SEED;
-      vi.mocked(chanceMock.hash).mockReturnValue(randomSeed);
+      vi.mocked(Chance.prototype.hash).mockReturnValue(randomSeed);
 
       const { getChance } = await import('./index.js');
       getChance();
@@ -56,13 +54,13 @@ describe('Test Chance', () => {
     it('It returns the specified seed', async () => {
       const randomSeed = Date.now().toString();
       delete process.env.CHANCE_SEED;
-      vi.mocked(chanceMock.hash).mockReturnValue(randomSeed);
+      vi.mocked(Chance.prototype.hash).mockReturnValue(randomSeed);
 
       const { getChance } = await import('./index.js');
       getChance(randomSeed);
 
       expect(Chance).toHaveBeenCalledTimes(3);
-      expect(vi.mocked(chanceMock.hash)).toHaveBeenCalledTimes(1);
+      expect(vi.mocked(Chance.prototype.hash)).toHaveBeenCalledTimes(1);
       expect(Chance).toHaveBeenNthCalledWith(3, randomSeed);
     });
   });
@@ -84,7 +82,7 @@ describe('Test Chance', () => {
       const randomSeed = Date.now().toString();
 
       delete process.env.CHANCE_SEED;
-      vi.mocked(chanceMock.hash).mockReturnValue(randomSeed);
+      vi.mocked(Chance.prototype.hash).mockReturnValue(randomSeed);
 
       const module = await import('./index.js');
       const testRunnerSeed = module.default();
