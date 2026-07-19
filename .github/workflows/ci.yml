@@ -74,6 +74,7 @@ jobs:
         id: get-next-version
         run: npx semantic-release --dry-run
         env:
+          NPM_TOKEN: "irrelevant"
           GITHUB_TOKEN: ${{ github.token }}
 
       - name: Publish release status
