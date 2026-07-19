@@ -36,7 +36,17 @@ We use GitHub issues to track public bugs. Report a bug by [opening a new issue]
 - Notes (possibly including why you think this might be happening, or things you have tried and which didn't work)
 
 ## Use a Consistent Coding Style
-All code must pass `pnpm ci`, which will ensure that the standard is met.
+All code must pass `pnpm run ci`, which will ensure that the standard is met.
+
+## Releases
+
+The [release workflow](.github/workflows/release.yml) evaluates `main` for a release every Tuesday at 09:00
+`Europe/London`. It runs the full verification suite before invoking semantic-release. Semantic-release analyzes all
+unreleased commits and decides whether to publish and which version to use.
+
+Maintainers can also run the release workflow manually from GitHub Actions and select any ref. The branch configuration
+in `.releaserc.json` remains authoritative, so selecting a ref does not override semantic-release's release channels or
+branch rules.
 
 ## License
 By contributing to the project, you agree that your contributions will be licensed under the [MIT License](http://choosealicense.com/licenses/mit/).
