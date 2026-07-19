@@ -40,7 +40,7 @@ importers:
         specifier: ^24.13.3
         version: 24.13.3
       '@vitest/coverage-v8':
-        specifier: ^4.1.10
+        specifier: 4.1.10
         version: 4.1.10(vitest@4.1.10)
       commitlint:
         specifier: ^21.0.0

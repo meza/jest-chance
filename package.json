@@ -53,7 +53,7 @@
     "@semantic-release/npm": "^13.1.5",
     "@types/chance": "^1.1.8",
     "@types/node": "^24.13.3",
-    "@vitest/coverage-v8": "^4.1.10",
+    "@vitest/coverage-v8": "4.1.10",
     "commitlint": "^21.0.0",
     "install-deps-postmerge": "^2.0.1",
     "lefthook": "^1.13.6",
