@@ -9,6 +9,7 @@
     "skipLibCheck": true,
     "outDir": "./dist/esm",
     "declarationDir": "./dist/types",
+    "tsBuildInfoFile": "./.cache/tsconfig.tsbuildinfo",
     "noPropertyAccessFromIndexSignature": false,
     "isolatedModules": true,
     "sourceRoot": "src",
