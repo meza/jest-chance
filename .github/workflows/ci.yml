@@ -83,7 +83,7 @@ jobs:
     needs: [ verify ]
     if: needs.verify.outputs.new-release-published == 'true'
     name: Release
-    runs-on: meza-ubuntu-slim
+    runs-on: ubuntu-slim
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
