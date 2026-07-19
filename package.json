@@ -54,7 +54,7 @@
     "@types/chance": "^1.1.8",
     "@types/node": "^24.13.3",
     "@vitest/coverage-v8": "^4.1.10",
-    "commitlint": "^19.8.1",
+    "commitlint": "^21.0.0",
     "install-deps-postmerge": "^2.0.1",
     "lefthook": "^1.13.6",
     "pnpm": "^11.13.0",
