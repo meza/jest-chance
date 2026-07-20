@@ -5,6 +5,7 @@ on: [ push ]
 permissions:
   checks: write
   contents: read
+  pull-requests: write
 
 env:
   # renovate: datasource=node-version depName=node versioning=node
