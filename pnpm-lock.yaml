@@ -24,9 +24,6 @@ importers:
       '@meza/biome':
         specifier: ^1.3.3
         version: 1.3.3
-      '@meza/tsconfig-base':
-        specifier: 1.1.0
-        version: 1.1.0
       '@semantic-release/changelog':
         specifier: 6.0.3
         version: 6.0.3(semantic-release@25.0.7(supports-color@7.2.0)(typescript@7.0.2))
@@ -297,9 +294,6 @@ packages:
 
   '@meza/biome@1.3.3':
     resolution: {integrity: sha512-aaQbVeyQJVbehqeUSbTSwRkeVl85qwjWLpFmtww6pLF4KvOtnjE7uHPHx9wl6JoyRcFp2YacTFOyxX1twpavWg==}
-
-  '@meza/tsconfig-base@1.1.0':
-    resolution: {integrity: sha512-ScbUVyNon6sR5Vf84Y8ndzHjWQe1zhQK55VN7APS4U6yks9GBnhTm6l+ZuQ0fK9i8bzJ4nImnzZNE+BQ6cE8zw==}
 
   '@napi-rs/wasm-runtime@1.1.6':
     resolution: {integrity: sha512-ZLv/JdUfkvOy9eCnnBaGfiO+XimbjebAeO+MRQqD/B+FR1tnRN0tpKSJHRbE8sFfS6aqsXZ67TQjfwfsxULVbg==}
@@ -2619,8 +2613,6 @@ snapshots:
       '@braidai/lang': 1.1.2
 
   '@meza/biome@1.3.3': {}
-
-  '@meza/tsconfig-base@1.1.0': {}
 
   '@napi-rs/wasm-runtime@1.1.6(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)':
     dependencies:

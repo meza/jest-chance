@@ -1,23 +1,32 @@
 {
-  "extends": "@meza/tsconfig-base",
   "compilerOptions": {
     "target": "ES2020",
     "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "emitDeclarationOnly": false,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
+    "rootDir": "./src",
     "outDir": "./dist/esm",
+    "declaration": true,
     "declarationDir": "./dist/types",
-    "tsBuildInfoFile": "./.cache/tsconfig.tsbuildinfo",
-    "noPropertyAccessFromIndexSignature": false,
-    "isolatedModules": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "sourceRoot": "src",
-    "typeRoots": ["./node_modules/@types", "./src/types"]
+    "incremental": true,
+    "tsBuildInfoFile": "./.cache/tsconfig.tsbuildinfo",
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUncheckedSideEffectImports": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+    "types": ["node"]
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "src/**/*.test.ts", "tests/**/*"],
-  "ts-node": {
-    "files": true
-  }
+  "exclude": ["src/**/*.test.ts"]
 }

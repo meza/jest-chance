@@ -3,6 +3,7 @@
   "compilerOptions": {
     "module": "CommonJS",
     "outDir": "./dist/cjs",
-    "tsBuildInfoFile": "./.cache/tsconfig-cjs.tsbuildinfo"
+    "tsBuildInfoFile": "./.cache/tsconfig-cjs.tsbuildinfo",
+    "verbatimModuleSyntax": false
   }
 }
