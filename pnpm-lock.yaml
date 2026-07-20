@@ -16,13 +16,13 @@ importers:
         specifier: 0.18.5
         version: 0.18.5
       '@biomejs/biome':
-        specifier: ^2.5.3
+        specifier: 2.5.3
         version: 2.5.3
       '@commitlint/config-conventional':
         specifier: 21.2.0
         version: 21.2.0
       '@meza/biome':
-        specifier: ^1.3.3
+        specifier: 1.3.3
         version: 1.3.3
       '@semantic-release/changelog':
         specifier: 6.0.3
